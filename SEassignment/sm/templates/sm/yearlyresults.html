@@ -1,0 +1,57 @@
+<title>KITMEN's SMS YEARLYRESULTS</title>
+<p align=center><font size="10">  ~~~~~~~~$ KITMEN's SMS YEARLYRETAIL $~~~~~~~~ </font></p>
+
+{% if error_message %}<p align=center><font size="10" color="red"><strong>{{ error_message }}</strong></font></p>{% endif %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sm/style.css' %}">
+
+<div class='div'>
+    <h1><p align=center><font size="8">The statistics of this year are below:</font></p></h1>
+</div>
+<br>
+<br>
+<ul>
+    <p align=center><font size="5">Yearly Biggest Sale Volume: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                {{bsv}}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font size="5">Yearly Biggest Sale: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                {{bs}}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font size="5">Yearly Sale of Various Goods: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                {% for vgs_val in vgs %}
+                {{vgs_val.code}}  {{vgs_val.number}}
+                {% endfor %}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <br>
+    <p align=center><font size="5">Yearly Total Sales: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                {{ ts }}
+            </font> 
+        </font>
+    </p>
+
+</ul>
+
+

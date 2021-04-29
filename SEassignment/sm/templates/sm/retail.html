@@ -1,0 +1,24 @@
+<title>KITMEN's SMS RETAIL</title>
+<p align=center><font size="10">  ~~~~~~~~$ KITMEN's SMS RETAIL $~~~~~~~~ </font></p>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sm/style.css' %}">
+
+{% if latest_functions_list %}
+    <ul>
+    {% for functions in latest_functions_list %}
+    {% if functions.functions_text == 'Monthlystatistics' %}
+    <p align=center><li><font size="10"><a href="{% url 'sm:monthly' functions.id %}">{{ functions.functions_text }}</a></font></li></p>
+    {% endif %}
+
+    {% if functions.functions_text == 'Yearlystatistics' %}
+    <p align=center><li><font size="10"><a href="{% url 'sm:yearly' functions.id %}">{{ functions.functions_text }}</a></font></li></p>
+    {% endif %}  
+
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Functions invaild.</p>
+{% endif %}

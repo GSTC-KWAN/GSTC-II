@@ -1,0 +1,38 @@
+<title>KITMEN's SUPERMARKET MANAGEMENT SYSTEM</title>
+<p align=center><font size="10">  ~$ KITMEN's SUPERMARKET MANAGEMENT SYSTEM $~</font></p>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sm/style.css' %}">
+
+
+{% if latest_functions_list %}
+    <ul>
+    {% for functions in latest_functions_list %}
+    {% if functions.functions_text == 'Cashier' %}
+    <p align=center><li><font size="10"><a href="{% url 'sm:cashier' functions.id %}">{{ functions.functions_text }}</a></font></li></p>
+    {% endif %}
+
+    {% if functions.functions_text == 'Inventoryincrement' %}
+    <p align=center><li><font size="10"><a href="{% url 'sm:inventoryincrement' functions.id %}">{{ functions.functions_text }}</a></font></li></p>
+    {% endif %}  
+
+    {% if functions.functions_text == 'Inventorydecrement' %}
+    <p align=center><li><font size="10"><a href="{% url 'sm:inventorydecrement' functions.id %}">{{ functions.functions_text }}</a></font></li></p>
+    {% endif %}      
+
+    {% if functions.functions_text == 'Inventory' %}
+    <p align=center><li><font size="10"><a href="{% url 'sm:inventory' functions.id %}">{{ functions.functions_text }}</a></font></li></p>
+    {% endif %}  
+
+    {% if functions.functions_text == 'Retail' %}
+    <p align=center><li><font size="10"><a href="{% url 'sm:retail' functions.id %}">{{ functions.functions_text }}</a></font></li></p>
+    {% endif %}  
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No cashier are available.</p>
+{% endif %}
+
+

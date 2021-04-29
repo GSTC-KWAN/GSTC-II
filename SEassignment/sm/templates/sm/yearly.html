@@ -1,0 +1,76 @@
+<title>KITMEN's SMS YEARLYRETAIL</title>
+<p align=center><font size="10">  ~~~~~~~~$ KITMEN's SMS YEARLYRETAIL $~~~~~~~~ </font></p>
+
+
+{% if error_message %}{{ error_message }}{% endif %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sm/style.css' %}">
+
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+
+<!--
+.h0{
+   background-repeat:no-repeat;
+   background-position:50% 50%;
+-->
+
+</style>
+
+</head>
+
+<title> Please complete the form below: </title>
+<p align=center><font size="7">  Please complete the requirements below: </font></p>
+<body class="h0">
+
+<body>
+
+<script type="text/javascript">
+function beforeSubmit(form){
+   if(form.year.value==''){
+      alert("ALL BLANKS CANNOT BE EMPTY！");
+      form.month.focus();
+      return false;
+      }
+   return true;
+}
+</script>
+
+
+<table align=center >
+
+<form action="{% url 'sm:year' functions.id %}"  name="form" method="post"  onSubmit="return beforeSubmit(this);">
+
+<tr align="left">
+
+{% csrf_token %}
+
+<tr align="left">
+<td><font size="5">Year:</font></td>
+<td><input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" name="year" value="" size="20" maxlength="9" ></td>
+</tr>
+
+
+
+<tr align="right">
+<td>
+<input type="submit" value="Submit" >   
+<input type="reset" name="submit2" value="Reset it">
+<input type="button" name="button" value="Shut down" onClick="window.close()">
+</td>
+</tr>
+
+
+</form>
+
+
+</table>
+
+
+</body>
+
+</html>

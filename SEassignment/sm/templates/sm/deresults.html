@@ -1,0 +1,24 @@
+<title>KITMEN's SMS DERESULTS</title>
+<p align=center><font size="10">  ~~~~~$ KITMEN's SMS INVENTORYDECREMENT $~~~~~ </font></p>
+<br>
+<br>
+{% if error_message %}
+<p><strong><p align=center><font size="7">
+    {{ error_message }}
+</strong></p></font></p>
+{% else %}
+<p align=center><font size="6" color="red"><a href="{% url 'sm:inventorydecrement' functions.id %}">Do it again?</a></font></p>
+<div class='div'>
+    <h1><p align=center><font size="8">Inventory Decrement Operations Complete!!!!</font></p></h1>
+</div>
+{% endif %}
+
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sm/style.css' %}">
+
+
+
+
+

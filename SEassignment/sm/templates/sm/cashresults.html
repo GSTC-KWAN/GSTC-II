@@ -1,0 +1,45 @@
+<title>KITMEN's SMS CASHRESULTS</title>
+<p align=center><font size="10">  ~~~~~~~~$ KITMEN's SMS CASHIER $~~~~~~~~ </font></p>
+{% if error_message %}<p align=center><font size="10" color="red"><strong>{{ error_message }}</strong></font></p>{% endif %}
+
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sm/style.css' %}">
+
+<div class='div'>
+    <h1><p align=center><font size="8">The bill of this transaction is below:</font></p></h1>
+</div>
+<br>
+<br>
+<ul>
+    <p align=center><font size="5">Receivable: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                $  {{ receivable }}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font size="5">Receipts: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+               $ {{ receipts }}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font size="5">Change: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                $ {{ change }}
+            </font> 
+        </font>
+    </p>
+
+</ul>
+
+

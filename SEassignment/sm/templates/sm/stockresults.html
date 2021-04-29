@@ -1,0 +1,43 @@
+<title>KITMEN's SMS STOCKRESULTS</title>
+<p align=center><font size="10">  ~~~~~$ KITMEN's SMS INVENTORY $~~~~~ </font></p>
+{% if error_message %}<p align=center><font size="10" color="red"><strong>{{ error_message }}</strong></font></p>{% endif %}
+
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sm/style.css' %}">
+
+<div class='div'>
+    <h1><p align=center><font size="8">Inventory Inquiry Complete!!!!</font></p></h1>
+</div>
+
+<div class='div'>
+    <h1><p align=center><font size="8">The records is below:</font></p></h1>
+</div>
+<br>
+<br>
+<ul>
+    <p align=center><font size="5">Code: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                {{ code }}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font size="5">Stock Amount: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+               {% for records in show %}
+                   <td>{{records.number}}</td>              
+               {% endfor %}
+            </font> 
+        </font>
+    </p>
+
+</ul>
+
+
+
