@@ -1,0 +1,88 @@
+<title>THE DOLLARBILL LOAN PLATFORM</title>
+<p align=center><font size="10">  ~~~~~~~~$ THE DOLLARBILL LOAN PLATFORM $~~~~~~~~ </font></p>
+<style>
+div{text-align: center;}
+</style>
+
+<div class='div'>
+    <h1><font size="8">Congratulations! You've been passed the inspections!  Your available loan plan is below:</font></h1>
+</div>
+<br>
+<br>
+<ul>
+    <p align=center><font size="5">Your Available Loan Plan: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                {{ pred }}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font size="5">Your Available Loan Total: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+               $ {{ predloan }}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font size="5">Social Security Number: </font></p>
+    <p align=center >
+        <font color="red">
+            <font size="5">
+                {{ ssn }}
+            </font> 
+        </font>
+    </p>
+    <br>
+    <p align=center><font color="black"><font size="5">Name: </font></font></p>
+    <p align=center>
+        <font size="5">        
+            <font color="red">
+                {{ name }} 
+            </font>
+        </font>
+    </p>
+    <br>
+    <p align=center>
+        <font size="5">
+            <font color="black">
+                Annual Income:  
+            </font>
+        </font>
+    </p>
+    <p align=center>
+        <font size="5">
+            <font color="red">
+                $ {{ annualincome }} 
+            </font>
+        </font>
+    </p>
+    <br>
+    <p align=center>
+        <font size="5">
+            <font color="black">
+                Working Years: 
+            </font>
+        </font>
+    </p>
+    <p align=center>
+        <font size="5">
+             <font color="red">
+                 {{ workingyears }} years
+                </font>
+            </font>
+        </p>
+
+</ul>
+
+
+
+
+
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'loan/style.css' %}">

@@ -1,0 +1,123 @@
+<title>THE DOLLARBILL LOAN PLATFORM</title>
+<p align=center><font size="10">  ~~~~~~~~$ THE DOLLARBILL LOAN PLATFORM $~~~~~~~~ </font></p>
+
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+
+<!--
+.h0{
+   background-repeat:no-repeat;
+   background-position:50% 50%;
+-->
+
+</style>
+
+</head>
+
+<title> Please complete the form below: </title>
+<p align=center><font size="7">  Please complete the form below: </font></p>
+<body class="h0">
+
+<body>
+
+<script type="text/javascript">
+function beforeSubmit(form){
+   if(form.ssn.value==''){
+      alert("ALL BLANKS CANNOT BE EMPTY！");
+      form.ssn.focus();
+      return false;
+      }
+   if(form.name.value==''){
+      alert("ALL BLANKS CANNOT BE EMPTY！");
+      form.name.focus();
+      return false;
+      }
+   if(form.annualincome.value==''){
+      alert("ALL BLANKS CANNOT BE EMPTY！");
+      form.annualincome.focus();
+      return false;
+      }
+   if(form.workingyears.value==''){
+      alert("ALL BLANKS CANNOT BE EMPTY！");
+      form.workingyears.focus();
+      return false;
+      }
+   if(form.workingyears.value<'0'){
+      alert("YOUR WORKING YEARS GOTTA BE IN THE RANGE FROM 0 TO 42 YEARS！");
+      form.workingyears.focus();
+      return false;
+      }
+   if(form.workingyears.value>'42'){
+      alert("YOUR WORKING YEARS GOTTA BE IN THE RANGE FROM 0 TO 42 YEARS！");
+      form.workingyears.focus();
+      return false;
+      }
+   return true;
+}
+</script>
+
+
+<table align=center >
+
+<form action="{% url 'loan:info' platform.id %}"  name="form" method="post"  onSubmit="return beforeSubmit(this);">
+
+<tr align="left">
+
+{% csrf_token %}
+
+<tr align="left">
+<td><font size="5">SSN:</font></td>
+<td><input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" name="ssn" value="" size="20" maxlength="9" ></td>
+</tr>
+
+
+
+<td><font size="5">Name:</font></td>         
+<td><input type="text"  name="name"  value="" size="15" ></td>
+</tr>
+
+
+<tr align="left">
+<td><font size="5">Annual Income:</font></td>
+<td><input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" name="annualincome" value="" size="20" maxlength="10" ></td>
+</tr>
+
+
+
+<tr align="left">
+<td><font size="5">Working years:</font></td>   
+<td><input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" type="text" name="workingyears" value="" size="10" maxlength="2" ></td>
+</tr>
+
+
+
+
+
+
+<tr align="right">
+<td>
+<input type="submit" value="Submit" >   
+<input type="reset" name="submit2" value="Reset it">
+<input type="button" name="button" value="Shut down" onClick="window.close()">
+</td>
+</tr>
+
+
+</form>
+
+
+</table>
+
+<audio autoplay loop src="C:\Users\dell\Desktop\assignment\loan\templates\loan\BBHMM.mp3"/>
+
+</body>
+
+</html>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'loan/style.css' %}">
+
+

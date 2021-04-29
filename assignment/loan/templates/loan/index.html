@@ -1,0 +1,34 @@
+<title>THE DOLLARBILL LOAN PLATFORM</title>
+<p align=center><font size="10">  ~~~~~~~~$ THE DOLLARBILL LOAN PLATFORM $~~~~~~~~ </font></p>
+
+{% if latest_platform_list %}
+    <ul>
+    {% for platform in latest_platform_list %}
+    <li><font size="10"><a href="{% url 'loan:detail' platform.id %}">{{ platform.platform_text }}</a></font></li>
+    <p align=center><font size="7">Wanna become temporary rich ???   Click the title above !!!</font></p>
+    <audio autoplay loop src="BBHMM.mp3"/>
+    {% endfor %}
+    </ul>
+    <ul>
+        <p><font size="6" align=left>PLAN [1]:</font></p>
+        <p><font size="5" align=left>In plan [1] , you can get the loan of <font size="10"><font color="red"> 7 </font></font>times of your annualincome!!! </font></p>
+    </ul>   
+    <br>
+    <ul>
+        <p><font size="6" align=left>PLAN [2]:</font></p>
+        <p><font size="5" align=left>In plan [2] , you can get the loan of <font size="10"><font color="red"> 6 </font></font>times of your annualincome!!! </font></p>
+    </ul>   
+    <br>s
+    <ul>
+        <p><font size="6" align=left>PLAN [3]:</font></p>
+        <p><font size="5" align=left>In plan [3] , you can get the loan of <font size="10"><font color="red"> 5 </font></font> times of your annualincome!!! </font></p>
+    </ul>   
+{% else %}
+    <p><font size="10">Sorry, No loan platform are available!!!</font></p>
+{% endif %}
+
+ <br></br>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'loan/style.css' %}">
